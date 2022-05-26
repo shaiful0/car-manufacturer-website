@@ -6,26 +6,32 @@ import auth from '../firebase.init';
 
 const Login = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
+  const [
+    signInWithEmailAndPassword,
+    user1,
+  ] = useSignInWithEmailAndPassword(auth);
+  let signInError;
   const emailRef = useRef('');
   const passwordRef = useRef('');
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  if (user) {
+  if (user || user1 ) {
     navigate(from, { replace: true });
   }
-  const [
-    signInWithEmailAndPassword,
-    user1,
-  ] = useSignInWithEmailAndPassword(auth);
+  
+  if (error) {
+    signInError = <small><p className='text-red-500'>{error?.message}</p></small>
+  }
+
+
 
   const handleSubmit =  event =>{
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    console.log(email, password);
+    // console.log(email, password);
      signInWithEmailAndPassword(email, password);
      navigate('/')
   }
@@ -52,8 +58,10 @@ const Login = () => {
               <label className="label">
               </label>
             </div>
+            {signInError}
             <input className='btn w-full max-w-xs text-white' type="submit" value='Login' />
           </form>
+          
           <p className='text-black'>New to Doctors Portal <Link className='text-secondary' to='/register'>Create New Account</Link></p>
           <div className="divider">OR</div>
           <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue with Google</button>

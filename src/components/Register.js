@@ -21,7 +21,7 @@ const Register = () => {
    const email = emailRef.current.value;
    const password = passwordRef.current.value;
    console.log(email,password);
-   createUserWithEmailAndPassword(email,password)
+   createUserWithEmailAndPassword(email,password);
  }
 
   return (
@@ -56,7 +56,7 @@ const Register = () => {
               </label>
             </div>
 
-            <input className='btn w-full max-w-xs text-white' type="submit" value='Login' />
+            <input className='btn w-full max-w-xs text-white' type="submit" value='Register' />
           </form>
           <p className='text-black'>Already have an account? <Link className='text-secondary' to='/login'>Please login</Link></p>
           <div className="divider">OR</div>

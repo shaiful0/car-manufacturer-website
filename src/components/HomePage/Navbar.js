@@ -24,15 +24,18 @@ const Navbar = () => {
         <li><a>DashBord</a></li>
       </ul>
     </div>
-    <a class="btn btn-ghost normal-case text-xl">Car Home</a>
+    <h1 class="text-2xl font-bold">Car Home</h1>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal p-0 mx-10">
       <li><Link to='/'>Home</Link></li>
-      <li><Link to='/parchaes'>Parchaes</Link></li>
-      <li><Link to='/about'>About</Link></li>
+      {user && <li><Link to='/purchaes/itemId'>Purchase</Link></li>}
+      {
+        user && <li><Link to='/dashbord'>Dashbord</Link></li>
+      }
       <li><Link to='/blogs'>Blogs</Link></li>
-      <li><Link to='/dashbord'>DashBord</Link></li>
+  
+      {/* <li><Link to='/dashbord'>My Protfolio</Link></li> */}
       {
         user?
         <button className='btn btn-accent btn-circle' onClick={userSignOut}>sign out</button>
