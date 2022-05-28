@@ -2,14 +2,18 @@ import React, { useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
+import Loading from './ParchasePage/Loading';
+import useToken from './hooks/useToken';
 
 
 const Login = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [
     signInWithEmailAndPassword,
-    user1,
+    user1, error1, 
   ] = useSignInWithEmailAndPassword(auth);
+  
+  const [token] = useToken(user || user1);
   let signInError;
   const emailRef = useRef('');
   const passwordRef = useRef('');
@@ -17,12 +21,15 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  if (user || user1 ) {
+  if (token ) {
     navigate(from, { replace: true });
   }
+  if(loading){
+    return <Loading></Loading>
+  }
   
-  if (error) {
-    signInError = <small><p className='text-red-500'>{error?.message}</p></small>
+  if (error || error1) {
+    signInError = <small><p className='text-red-500'>{error?.message || error1?.message}</p></small>
   }
 
 
@@ -33,7 +40,8 @@ const Login = () => {
     const password = passwordRef.current.value;
     // console.log(email, password);
      signInWithEmailAndPassword(email, password);
-     navigate('/')
+    //  navigate('/')
+     navigate(from, { replace: true });
   }
 
   return (

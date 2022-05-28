@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddProduct from './components/DashBord/AddProduct';
 import AddReview from './components/DashBord/AddReview';
 import DashBord from './components/DashBord/DashBord';
 import MyOrders from './components/DashBord/MyOrders';
@@ -14,6 +15,9 @@ import Login from './components/Login';
 import NotFound from './components/NotFound';
 import Parchase from './components/ParchasePage/Parchase';
 import Register from './components/Register';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Users from './components/DashBord/Users';
 
 function App() {
   return (
@@ -30,6 +34,11 @@ function App() {
           <Parchase></Parchase>
         </RequireAuth>
       }></Route>
+        <Route path='/addproduct' element={
+        <RequireAuth>
+          <AddProduct></AddProduct>
+        </RequireAuth>
+      }></Route>
         <Route path='/dashbord' element={
         <RequireAuth>
           <DashBord></DashBord>
@@ -38,10 +47,12 @@ function App() {
         <Route index element={<MyOrders></MyOrders>}></Route>
         <Route path='review' element={<AddReview></AddReview>}></Route>
         <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+        <Route path='users' element={<Users></Users>}></Route>
       </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }
