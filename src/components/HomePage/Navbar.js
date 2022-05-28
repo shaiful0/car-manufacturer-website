@@ -11,7 +11,7 @@ const Navbar = () => {
     localStorage.removeItem('accessToken')
   }
   return (
-<div className="navbar justify-between">
+<div className="navbar justify-between bg-blue-200">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -27,7 +27,7 @@ const Navbar = () => {
     </div>
     <h1 className="text-2xl font-bold">Car Home</h1>
   </div>
-  <div className="navbar-center hidden lg:flex">
+  <div className="navbar-center hidden lg:flex ">
     <ul className="menu menu-horizontal p-0 mx-10">
       <li><Link to='/'>Home</Link></li>
       {user && <li><Link to='/purchaes/itemId'>Purchase</Link></li>}
