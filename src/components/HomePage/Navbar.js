@@ -25,7 +25,7 @@ const Navbar = () => {
       }
       <li><Link to='/blogs'>Blogs</Link></li>
   
-      {user &&  <li><Link to='/addproduct'>Add Products</Link></li>}
+      {user &&  <li><Link to='/protfolio'>My protfolio</Link></li>}
       {
         user?
         <button className='btn btn-accent btn-circle' onClick={userSignOut}>sign out</button>
@@ -45,7 +45,7 @@ const Navbar = () => {
       }
       <li><Link to='/blogs'>Blogs</Link></li>
   
-      {user &&  <li><Link to='/addproduct'>Add Products</Link></li>}
+      {user &&  <li><Link to='/protfolio'>My protfolio</Link></li>}
       {
         user?
         <button className='' onClick={userSignOut}>sign out</button>

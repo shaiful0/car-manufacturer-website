@@ -17,7 +17,7 @@ const AddReview = () => {
       userName: user.displayName,
       userReview: review
     }
-    fetch('http://localhost:5000/reviews', {
+    fetch('https://afternoon-hamlet-58806.herokuapp.com/reviews', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

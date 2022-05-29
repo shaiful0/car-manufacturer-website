@@ -18,6 +18,7 @@ import Register from './components/Register';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Users from './components/DashBord/Users';
+import MyPortfolio from './components/DashBord/MyPortfolio';
 
 function App() {
   return (
@@ -34,9 +35,9 @@ function App() {
           <Parchase></Parchase>
         </RequireAuth>
       }></Route>
-        <Route path='/addproduct' element={
+        <Route path='/protfolio' element={
         <RequireAuth>
-          <AddProduct></AddProduct>
+          <MyPortfolio></MyPortfolio>
         </RequireAuth>
       }></Route>
         <Route path='/dashbord' element={

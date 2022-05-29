@@ -20,7 +20,7 @@ const Parchase = () => {
 
 
   useEffect(() => {
-    const url = `http://localhost:5000/items/${itemId}`;
+    const url = `https://afternoon-hamlet-58806.herokuapp.com/items/${itemId}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setService(data))
@@ -35,7 +35,7 @@ const Parchase = () => {
       userName:user.displayName,
       userEmail:user.email,
     }
-    fetch('http://localhost:5000/orders',{
+    fetch('https://afternoon-hamlet-58806.herokuapp.com/orders',{
       method: 'POST',
       headers: {
         'content-type':'application/json'

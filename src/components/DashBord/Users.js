@@ -4,14 +4,14 @@ import Loading from '../ParchasePage/Loading';
 import UserRow from './UserRow';
 
 const Users = () => {
-  // const {data: users, isLoading} = useQuery('users', () => fetch('http://localhost:5000/user').then(res => res.json()))
+  // const {data: users, isLoading} = useQuery('users', () => fetch('https://afternoon-hamlet-58806.herokuapp.com/user').then(res => res.json()))
 
   // if(isLoading){
   //   return <Loading></Loading>
   // }
   const [users, setUsers,] = useState([]);
   useEffect(() =>{
-    fetch('http://localhost:5000/user')
+    fetch('https://afternoon-hamlet-58806.herokuapp.com/user')
     .then(res => res.json())
     .then(data => setUsers(data))
   },[])
@@ -23,9 +23,9 @@ const Users = () => {
     <thead>
       <tr>
         <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>Email</th>
+        <th>Make admin</th>
+        <th>Remove admin</th>
       </tr>
     </thead>
     <tbody>

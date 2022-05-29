@@ -8,7 +8,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/orders?userEmail=${user.email}`)
+      fetch(`https://afternoon-hamlet-58806.herokuapp.com/orders?userEmail=${user.email}`)
         .then(res => res.json())
         .then(data => setOrders(data));
     }
@@ -17,7 +17,7 @@ const MyOrders = () => {
   const handleDelete = id => {
     const sure = window.confirm('are you want to cancle your order?');
     if (sure) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://afternoon-hamlet-58806.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: 'DELETE'
       })

@@ -40,7 +40,7 @@ const Login = () => {
     const password = passwordRef.current.value;
     // console.log(email, password);
      signInWithEmailAndPassword(email, password);
-    //  navigate('/')
+     navigate('/')
      navigate(from, { replace: true });
   }
 
