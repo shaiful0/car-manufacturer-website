@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import AddProduct from './components/DashBord/AddProduct';
+import AddProduct from './components/DashBord/MyPortfolio';
 import AddReview from './components/DashBord/AddReview';
 import DashBord from './components/DashBord/DashBord';
 import MyOrders from './components/DashBord/MyOrders';
