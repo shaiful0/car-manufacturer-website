@@ -11,19 +11,20 @@ const Register = () => {
   const passwordRef = useRef('');
   let signInError;
   const location = useLocation();
-  // let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/";
+  
 
   const [createUserWithEmailAndPassword , user, error] = useCreateUserWithEmailAndPassword(auth);
-  const [token] = useToken(gUser || user)
+  const [token] = useToken(gUser || user);
 
  
- const handleCreateUser = event =>{
+ const handleCreateUser = async event =>{
    event.preventDefault();
    const email = emailRef.current.value;
    const password = passwordRef.current.value;
   //  console.log(email,password);
-   createUserWithEmailAndPassword(email,password);
-   navigate('/')
+   await createUserWithEmailAndPassword(email,password);
+  // navigate('/');
  }
 
  if (token) {
