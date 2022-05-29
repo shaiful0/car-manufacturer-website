@@ -65,7 +65,7 @@ const Parchase = () => {
               <h2 className="card-title">{service.name}</h2>
               <p><span className='text-xl font-bold'>Discription: </span>{service.description}</p>
               <p><span className='text-xl font-bold'>Price: </span>{service.price}</p>
-              <p><span className='text-xl font-bold'>Available Quatity: </span>{services.length} <span>(minimum order 500 pice)</span></p>
+              <p><span className='text-xl font-bold'>Available Quatity: </span>{service.quantity} <span>(minimum order 500 pice)</span></p>
             </div>
           </div>
         </div>
