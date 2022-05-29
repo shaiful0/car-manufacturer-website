@@ -13,7 +13,7 @@ const MyPortfolio = () => {
           <p>Email:shariful0401@gmail.com</p>
           <p>Education:University 4th year (Communication Engimeering)</p>
           <ul>
-            <p>List of Technologies</p>
+            <p className='text-2xl'>List of Technologies</p>
            <li>1.HTML</li>
            <li>2.CSS</li>
            <li>2.Bootstrap</li>
@@ -24,13 +24,13 @@ const MyPortfolio = () => {
            <li>2.MongoDB</li>
           </ul>
 
-          <p>Live site Links:</p>
+          <p className='text-2xl'>Live site Links:</p>
           <ul>
-            <li>1.https://perfume-house-6d883.web.app/</li>
-            <li>2.https://personal-website-dr-mich-260f3.web.app/</li>
-            <li>3.https://bespoke-douhua-429389.netlify.app/</li>
-            <li>4.https://sad-allen-9ee8b8.netlify.app/</li>
-            <li>5.https://venerable-bonbon-639db3.netlify.app/</li>
+            <li><a href="https://perfume-house-6d883.web.app/">1.https://perfume-house-6d883.web.app/</a></li>
+            <li><a href="https://personal-website-dr-mich-260f3.web.app/">2.https://personal-website-dr-mich-260f3.web.app/</a></li>
+            <li><a href="https://bespoke-douhua-429389.netlify.app/">3.https://bespoke-douhua-429389.netlify.app/</a></li>
+            <li><a href="https://sad-allen-9ee8b8.netlify.app/">4.https://sad-allen-9ee8b8.netlify.app/</a></li>
+            <li><a href="https://venerable-bonbon-639db3.netlify.app/">5.https://venerable-bonbon-639db3.netlify.app/</a></li>
           </ul>
         </div>
         <img style={{ height: '200px' }} src={me} alt="" />
